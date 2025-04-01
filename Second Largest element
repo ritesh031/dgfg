@@ -1,0 +1,17 @@
+class Solution {
+public:
+    // Function returns the second
+    // largest element
+    int getSecondLargest(vector<int>& arr) {
+        int L = arr[0], L2 = arr[0];
+        for(int i = 1; i < arr.size(); i++) {
+            if(L < arr[i]) {
+                L2 = L;
+                L = arr[i];
+            }
+            else if (L2 < arr[i] && arr[i] != L) L2 = arr[i];
+            else if (L2 == L) L2 = arr[i];
+        }
+        return L2 == L ? -1 : L2;
+    }
+};
