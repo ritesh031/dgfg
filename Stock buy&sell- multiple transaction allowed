@@ -1,0 +1,27 @@
+Day-7 of GFG160 
+
+Problem: Stock buy and Sell - Multiple Transaction Allowed
+
+Approach: 
+we have to find the maximum profit by buying and selling the stocks from given price[] array
+- traverse the whole array, and whenever prices[i] > prices[i-1] we just get out profit and add into out return ans.
+
+TC: O(N)
+SC: O(1)
+
+CODE:
+
+class Solution {
+  public:
+    int maximumProfit(vector<int> &prices) {
+        int n = prices.size();
+        int ans = 0;
+        
+        for(int i = 1; i<n; i++){
+            if(prices[i]>prices[i-1]){
+                ans+= (prices[i] - prices[i-1]);
+            }
+        }
+        return ans;
+    }
+};
