@@ -5,6 +5,8 @@ Problem: Stock buy and Sell - Multiple Transaction Allowed
 Approach: 
 we have to find the maximum profit by buying and selling the stocks from given price[] array
 - traverse the whole array, and whenever prices[i] > prices[i-1] we just get out profit and add into out return ans.
+- prices[i-1] is the buying day and prices[i] is the selling day of stock
+- so we maximise our prifit
 
 TC: O(N)
 SC: O(1)
