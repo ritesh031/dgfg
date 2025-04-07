@@ -1,0 +1,25 @@
+Day - 8 of GFG160 
+
+Problem: Stock Buy and Sell- Max one transaction allowed
+
+TC: O(N)
+SC: O(1)
+
+Solution Code: 
+
+class Solution {
+  public:
+    int maximumProfit(vector<int> &prices) {
+        // code here
+        int mnp = INT_MAX;
+        int mxp = 0;
+        for(auto p: prices) {
+            if(p<mnp){
+                mnp = p;
+            }
+            int pr = p-mnp;
+            mxp = max(pr,mxp);
+        }
+        return mxp;
+    }
+};
