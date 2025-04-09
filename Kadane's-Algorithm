@@ -1,0 +1,22 @@
+day-10 of GFG160
+
+Problem: Kadane's Algorithms ( Maximum subarray sum ) 
+
+Optimal code in O(N) TC: 
+
+class Solution {
+  public:
+    int maxSubarraySum(vector<int> &arr) {
+        // Your code here
+        int CurrSum = 0; 
+        int MaxSum = INT_MIN;
+        for(val : arr){
+            CurrSum += val;
+            MaxSum = max(CurrSum, MaxSum);
+            if(CurrSum<0) 
+            CurrSum = 0;
+        }
+        return MaxSum;
+    }
+};
+
